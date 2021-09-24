@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
+  {% extends 'layout.html' %}
+  {% block body %}
 
+    <h1> Student Roster </h1>
+
+    {% if grade_view == 1 %}
+    
+  <ul>
+      {% for student in list %}
+     
+   <li>
+          {{ student[0] }} GPA: {{ student[1] }}
+   </li>
+
+        {% endfor %}
+
+    </ul>
+
+      (% elif grade_view == 2 %)
+      
+  <ul>
+        {% for student in list %}
+       
+    <li>
+          {{ student[0] }} GPA: {{ student[2] }}
+          
+    </li>
+          
+          {% endfor %}
+       
+  </ul>
+
+        {% else %}
+        
+  <ul>
+          {% for student in list %}
+          
+    <li>
+          {{ student[0] }} GPA: {{ student[2] }}
+         
+    </li>
+          {% endfor %}
+        
+  </ul>
+
+        {% endif %}
+
+      {% endblock %}
+
+      </html>
